@@ -180,3 +180,26 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/python
 
 # Generated using ignr.py - github.com/Antrikshy/ignr.py
+
+# Airflow specific
+logs/
+plugins/
+airflow-webserver.pid
+airflow.cfg
+airflow.db
+webserver_config.py
+standalone_admin_password.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Databricks
+.databricks/
