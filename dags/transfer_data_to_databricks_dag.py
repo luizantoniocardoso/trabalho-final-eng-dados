@@ -6,20 +6,20 @@ e usando o warehouse_id.
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.providers.databricks.operators.databricks import DatabricksSubmitRunOperator
-from airflow.operators.dummy import DummyOperator
-from airflow.utils.task_group import TaskGroup
+from airflow.operators.dummy import DummyOperator 
 
 # Configurações de conexão
 DATABRICKS_CONN_ID = "databricks_default"
 
-# --- AJUSTE OS CAMINHOS DOS NOTEBOOKS AQUI ---
-NOTEBOOK_PATH_001 = "/Workspace/Users/engdados620@gmail.com/001" 
-NOTEBOOK_PATH_002 = "/Workspace/Users/engdados620@gmail.com/002" 
-NOTEBOOK_PATH_003 = "/Workspace/Users/engdados620@gmail.com/003" 
+NOTEBOOK_PATH_001 = "/Workspace/Users/engdados620@gmail.com/001" # Criação de Schemas
+NOTEBOOK_PATH_002 = "/Workspace/Users/engdados620@gmail.com/002" # Leitura CSV -> Bronze
+NOTEBOOK_PATH_003 = "/Workspace/Users/engdados620@gmail.com/003" # Transformação Bronze -> Silver
+NOTEBOOK_PATH_004 = "/Workspace/Users/engdados620@gmail.com/004" # Modelagem Silver -> Gold/SCD2
 
 WAREHOUSE_ID = # INSIRA O ID DO SQL WAREHOUSE SERVERLESS AQUI
 
-# Argumentos padrão da DAG (mantidos)
+
+# Argumentos padrão da DAG
 default_args = {
     "owner": "data_engineering",
     "depends_on_past": False,
@@ -83,7 +83,7 @@ with DAG(
         do_xcom_push=True,
     )
 
-    # --- FASE 3: TRANSFORMAÇÃO E SILVER (Notebook 003 - Fase 1) ---
+    # --- FASE 3: TRANSFORMAÇÃO E SILVER (Notebook 003) ---
     transform_to_silver = DatabricksSubmitRunOperator(
         task_id="transform_to_silver",
         databricks_conn_id=DATABRICKS_CONN_ID,
@@ -95,7 +95,6 @@ with DAG(
                     "sql_warehouse_id": WAREHOUSE_ID,
                     "notebook_task": {
                         "notebook_path": NOTEBOOK_PATH_003,
-                        "base_parameters": {"phase": "SILVER_TRANSFORMATION"}
                     },
                 }
             ]
@@ -103,7 +102,7 @@ with DAG(
         do_xcom_push=True,
     )
     
-    # --- FASE 4: MODELAGEM E GOLD (Notebook 003 - Fase 2) ---
+    # --- FASE 4: MODELAGEM E GOLD (Notebook 004) ---
     model_to_gold_scd2 = DatabricksSubmitRunOperator(
         task_id="model_to_gold_scd2",
         databricks_conn_id=DATABRICKS_CONN_ID,
@@ -114,8 +113,7 @@ with DAG(
                     "task_key": "model_gold_task",
                     "sql_warehouse_id": WAREHOUSE_ID,
                     "notebook_task": {
-                        "notebook_path": NOTEBOOK_PATH_003,
-                        "base_parameters": {"phase": "GOLD_SCD2"}
+                        "notebook_path": NOTEBOOK_PATH_004,
                     },
                 }
             ]
