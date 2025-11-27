@@ -8,6 +8,8 @@ A DAG realiza a orquestração do fluxo de dados desde o **Bronze (Raw/Landing)*
 
 ## Arquitetura Geral
 
+<img src="https://github.com/luizantoniocardoso/trabalho-final-eng-dados/blob/main/assets/diagrama_pipeline.jpeg?raw=true" alt="Diagrama da Pipeline" width="800"/>
+
 A pipeline segue as três camadas da arquitetura medalhão:
 
 | Camada | Descrição | Objetivo |
