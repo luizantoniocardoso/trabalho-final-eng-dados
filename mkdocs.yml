@@ -13,13 +13,10 @@ theme:
 
 nav:
   - Início: index.md
-  - Domínio do Projeto: dominio.md
   - Arquitetura:
       - Visão Geral: arquitetura.md
   - Ingestão:
       - Estratégia de Ingestão: ingestao.md
-  - Transformações:
-      - Bronze / Silver / Gold: transformacoes.md
   - Modelo Dimensional:
       - Estrutura Dimensional: modelo_dimensional.md
   - Dashboard:
