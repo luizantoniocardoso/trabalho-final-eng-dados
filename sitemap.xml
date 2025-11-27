@@ -1,3 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://luizantoniocardoso.github.io/trabalho-final-eng-dados/</loc>
+         <lastmod>2025-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://luizantoniocardoso.github.io/trabalho-final-eng-dados/arquitetura/</loc>
+         <lastmod>2025-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://luizantoniocardoso.github.io/trabalho-final-eng-dados/dashboard/</loc>
+         <lastmod>2025-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://luizantoniocardoso.github.io/trabalho-final-eng-dados/ingestao/</loc>
+         <lastmod>2025-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://luizantoniocardoso.github.io/trabalho-final-eng-dados/modelo_conceitual/</loc>
+         <lastmod>2025-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://luizantoniocardoso.github.io/trabalho-final-eng-dados/modelo_dimensional/</loc>
+         <lastmod>2025-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://luizantoniocardoso.github.io/trabalho-final-eng-dados/modelo_fisico/</loc>
+         <lastmod>2025-11-27</lastmod>
+    </url>
 </urlset>

@@ -12,29 +12,31 @@
         <meta name="author" content="luiz antonio cardoso, alexandre sartore teixeira, cristófer figurédo martins, davi carlos freitas, guilherme zapelíni da rosa schwa, tiago silvia de bittencourt">
       
       
-        <link rel="canonical" href="https://luizantoniocardoso.github.io/trabalho-final-eng-dados/">
+        <link rel="canonical" href="https://luizantoniocardoso.github.io/trabalho-final-eng-dados/modelo_conceitual/">
       
       
+        <link rel="prev" href="../ingestao/">
       
-        <link rel="next" href="arquitetura/">
+      
+        <link rel="next" href="../modelo_fisico/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>Trabalho Final - Engenharia de Dados</title>
+        <title>Modelo Conceitual - Trabalho Final - Engenharia de Dados</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +55,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#trabalho-final-engenharia-de-dados" class="md-skip">
+        <a href="#modelo-conceitual" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -94,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="." title="Trabalho Final - Engenharia de Dados" class="md-header__button md-logo" aria-label="Trabalho Final - Engenharia de Dados" data-md-component="logo">
+    <a href=".." title="Trabalho Final - Engenharia de Dados" class="md-header__button md-logo" aria-label="Trabalho Final - Engenharia de Dados" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Início
+              Modelo Conceitual
             
           </span>
         </div>
@@ -216,7 +218,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Trabalho Final - Engenharia de Dados" class="md-nav__button md-logo" aria-label="Trabalho Final - Engenharia de Dados" data-md-component="logo">
+    <a href=".." title="Trabalho Final - Engenharia de Dados" class="md-nav__button md-logo" aria-label="Trabalho Final - Engenharia de Dados" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -243,37 +245,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Início
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -289,37 +264,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#documentacao-oficial-do-projeto" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentação Oficial do Projeto
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -378,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="arquitetura/" class="md-nav__link">
+      <a href="../arquitetura/" class="md-nav__link">
         
   
   
@@ -460,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ingestao/" class="md-nav__link">
+      <a href="../ingestao/" class="md-nav__link">
         
   
   
@@ -542,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="transformacoes.md" class="md-nav__link">
+      <a href="../transformacoes.md" class="md-nav__link">
         
   
   
@@ -574,18 +518,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -606,7 +552,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -621,10 +567,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="modelo_conceitual/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo Conceitual
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -640,6 +613,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entidades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacionamentos-cardinalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relacionamentos (cardinalidades)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -652,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="modelo_fisico/" class="md-nav__link">
+      <a href="../modelo_fisico/" class="md-nav__link">
         
   
   
@@ -734,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="modelo_dimensional/" class="md-nav__link">
+      <a href="../modelo_dimensional/" class="md-nav__link">
         
   
   
@@ -816,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dashboard/" class="md-nav__link">
+      <a href="../dashboard/" class="md-nav__link">
         
   
   
@@ -871,10 +897,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#documentacao-oficial-do-projeto" class="md-nav__link">
+  <a href="#entidades" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Documentação Oficial do Projeto
+        Entidades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacionamentos-cardinalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relacionamentos (cardinalidades)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama
       
     </span>
   </a>
@@ -901,165 +949,36 @@
   
 
 
-<h1 id="trabalho-final-engenharia-de-dados">Trabalho Final – Engenharia de Dados</h1>
-<h2 id="documentacao-oficial-do-projeto">Documentação Oficial do Projeto</h2>
-<p>Bem-vindo à documentação do Trabalho Final da disciplina de <strong>Engenharia de Dados</strong>, desenvolvido em equipe, utilizando a <strong>Arquitetura Medalhão (Bronze, Silver e Gold)</strong> no <strong>Databricks</strong>.</p>
-<p>Use o menu à esquerda para navegar entre as seções.</p>
-<h1 id="1-objetivo-do-projeto">1. Objetivo do Projeto</h1>
-<p>O objetivo deste trabalho é construir um <strong>pipeline completo de engenharia de dados</strong>, desde a ingestão de um banco relacional até a criação de <strong>camadas Bronze, Silver e Gold</strong>, aplicando boas práticas de:</p>
+<h1 id="modelo-conceitual">Modelo Conceitual</h1>
+<p>O modelo conceitual representa o domínio de negócio do e-commerce, de forma
+independente de tecnologia, mostrando apenas <strong>entidades</strong> e <strong>relacionamentos</strong>.</p>
+<h2 id="entidades">Entidades</h2>
 <ul>
-<li>Ingestão de dados  </li>
-<li>Limpeza e padronização (ETL/ELT)  </li>
-<li>Modelagem dimensional  </li>
-<li>Criação de tabelas SCD2  </li>
-<li>Geração de KPIs e métricas  </li>
-<li>Armazenamento em Delta Lake  </li>
-<li>Processamento no Databricks  </li>
+<li><strong>Cliente</strong></li>
+<li><strong>Endereço</strong></li>
+<li><strong>Vendas</strong></li>
+<li><strong>Itens_venda</strong></li>
+<li><strong>Produtos</strong></li>
+<li><strong>Estoque</strong></li>
+<li><strong>Fornecedores</strong></li>
+<li><strong>Transportadoras</strong></li>
+<li><strong>Entregas</strong></li>
+<li><strong>Pagamentos</strong></li>
 </ul>
-<hr />
-<h1 id="2-equipe">2. Equipe</h1>
-<p>Trabalho desenvolvido em grupo</p>
-<blockquote>
-<p><strong>Integrantes:</strong>  </p>
+<h2 id="relacionamentos-cardinalidades">Relacionamentos (cardinalidades)</h2>
 <ul>
-<li>ALEXANDRE SARTOR TEIXEIRA</li>
-<li>CRISTHIAN CARDOSO BERTAN</li>
-<li>LUIZ CARDOSO ANTONIO</li>
-<li>CRISTOFFER FIGUEIREDO MARTINS</li>
-<li>DAVI CARLOS FREITAS</li>
-<li>GUILHERME ZAPELINI DA ROSA SCHWA</li>
-<li>TIAGO SILVEIRA DE BITTENCOURT</li>
+<li>Um <strong>Cliente</strong> possui <strong>N Endereços</strong> (1:N)</li>
+<li>Um <strong>Cliente</strong> realiza <strong>N Vendas</strong> (1:N)</li>
+<li>Uma <strong>Venda</strong> contém <strong>N Itens_venda</strong> (1:N)</li>
+<li>Cada <strong>Item_venda</strong> refere <strong>1 Produto</strong> (N:1)</li>
+<li>Um <strong>Produto</strong> pode ter <strong>N registros de Estoque</strong> e cada um está ligado a <strong>1 Fornecedor</strong> (Produto 1:N Estoque N:1 Fornecedores)</li>
+<li>Uma <strong>Venda</strong> gera <strong>N Pagamentos</strong> (1:N)</li>
+<li>Uma <strong>Venda</strong> gera <strong>1 Entrega</strong>, e cada <strong>Transportadora</strong> realiza <strong>N Entregas</strong> (Vendas 1:1 Entregas N:1 Transportadoras)</li>
+<li>Uma <strong>Venda</strong> usa <strong>1 Endereço</strong> de entrega (Vendas N:1 Endereço)</li>
 </ul>
-</blockquote>
-<hr />
-<h1 id="3-arquitetura-geral">3. Arquitetura Geral</h1>
-<p>O projeto foi construído utilizando a <strong>Arquitetura Medalhão</strong>, composta pelas seguintes camadas:</p>
-<h3 id="bronze">Bronze</h3>
-<ul>
-<li>Dados crus extraídos do PostgreSQL (Railway).  </li>
-<li>Nenhuma transformação aplicada.  </li>
-<li>Estrutura original preservada.</li>
-</ul>
-<h3 id="silver">Silver</h3>
-<ul>
-<li>Dados tratados e padronizados.  </li>
-<li>Normalização de schemas.  </li>
-<li>Remoção de nulos, duplicidades e inconsistências.</li>
-</ul>
-<h3 id="gold">Gold</h3>
-<ul>
-<li>Modelagem dimensional.  </li>
-<li>Implementação de SCD2.  </li>
-<li>Criação de tabelas fato e dimensões.  </li>
-<li>Base final para KPIs e métricas.</li>
-</ul>
-<hr />
-<h1 id="4-pipeline-de-dados-medalhao">4. Pipeline de Dados (Medalhão)</h1>
-<p>O fluxo do pipeline segue as etapas abaixo:</p>
-<h3 id="1-extracao"><strong>1. Extração</strong></h3>
-<ul>
-<li>Conexão com o banco PostgreSQL hospedado no Railway.  </li>
-<li>Leitura das tabelas originais.</li>
-</ul>
-<h3 id="2-bronze"><strong>2. Bronze</strong></h3>
-<ul>
-<li>Armazenamento bruto no Delta Lake.  </li>
-<li>Sem alteração de tipos ou nomes.</li>
-</ul>
-<h3 id="3-silver"><strong>3. Silver</strong></h3>
-<ul>
-<li>Limpeza dos dados.  </li>
-<li>Padronização de nomes e tipos.  </li>
-<li>Tratamento de colunas como CPF, email, telefone etc.  </li>
-<li>Deduplicação.</li>
-</ul>
-<h3 id="4-gold"><strong>4. Gold</strong></h3>
-<ul>
-<li>Aplicação de SCD2.  </li>
-<li>Criação de dimensões e fatos.  </li>
-<li>Preparação dos dados analíticos.</li>
-</ul>
-<hr />
-<h1 id="5-modelos-de-dados">5. Modelos de Dados</h1>
-<p>Entidades principais do sistema:</p>
-<ul>
-<li><strong>Clientes</strong></li>
-<li><strong>fornecedores</strong></li>
-<li><strong>produtos</strong></li>
-<li><strong>pagamento</strong></li>
-<li><strong>transportadoras</strong></li>
-<li><strong>vendas</strong></li>
-</ul>
-<p>Na camada Gold, os dados serão organizados em:</p>
-<h3 id="dimensoes"><strong>Dimensões</strong></h3>
-<ul>
-<li><code>dim_cliente</code></li>
-<li><code>dim_fornecedor</code>  </li>
-<li><code>dim_pagamento</code></li>
-<li><code>dim_produto</code>  </li>
-<li><code>dim_transportadora</code></li>
-</ul>
-<h3 id="tabela-fato"><strong>Tabela Fato</strong></h3>
-<ul>
-<li><code>fato_vendas</code></li>
-</ul>
-<hr />
-<h1 id="6-kpis">6. 📊 KPIs</h1>
-<p>Serão <strong>4 KPIs</strong> Definidos pela equipe:</p>
-<ul>
-<li>KPI - Average Revenue <em>Receita Média</em></li>
-<li>KPI - Average Order Value - AOV <em>Valor Médio de Pedido</em></li>
-<li>KPI - Top Categoria <em>Categoria Mais Vendida</em></li>
-<li>KPI - Top Forma de Pagamento <em>Forma de Pagamento Mais Utilizada</em></li>
-</ul>
-<hr />
-<h1 id="8-7-metricas">8. 7 Métricas</h1>
-<p>Serão <strong>2 métricas</strong>, como:</p>
-<ul>
-<li>Métrica - vendas mensais <em>Vendas Mensais nos ultimos 12 meses</em></li>
-<li>Métrica - Top 5 Produtos <em>Produtos Mais Vendidos</em></li>
-</ul>
-<hr />
-<h1 id="9-tecnologias-utilizadas">9. 🛠 Tecnologias Utilizadas</h1>
-<table>
-<thead>
-<tr>
-<th>Tecnologia</th>
-<th>Finalidade</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Databricks</strong></td>
-<td>Execução dos notebooks e processamento distribuído</td>
-</tr>
-<tr>
-<td><strong>Delta Lake</strong></td>
-<td>Armazenamento estruturado das camadas Bronze/Silver/Gold</td>
-</tr>
-<tr>
-<td><strong>Airflow</strong></td>
-<td>Orquestração da pipeline</td>
-</tr>
-<tr>
-<td><strong>PySpark / Spark SQL</strong></td>
-<td>Transformações e processamento</td>
-</tr>
-<tr>
-<td><strong>PostgreSQL (Railway)</strong></td>
-<td>Banco de origem</td>
-</tr>
-<tr>
-<td><strong>GitHub</strong></td>
-<td>Versionamento</td>
-</tr>
-<tr>
-<td><strong>Databricks</strong></td>
-<td>Visualização de KPIs</td>
-</tr>
-</tbody>
-</table>
-<hr />
+<h2 id="diagrama">Diagrama</h2>
+<p>Abaixo, o diagrama conceitual em notação ER utilizado no projeto:</p>
+<p><img alt="Modelo Conceitual" src="../image.png" /></p>
 
 
 
@@ -1109,10 +1028,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
