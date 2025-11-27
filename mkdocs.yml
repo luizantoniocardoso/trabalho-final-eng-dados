@@ -20,9 +20,12 @@ nav:
       - Estratégia de Ingestão: ingestao.md
   - Transformações:
       - Bronze / Silver / Gold: transformacoes.md
+<<<<<<< HEAD
   - Modelagem de Dados:
       - Modelo Conceitual: modelo_conceitual.md
       - Modelo Físico (DDL): modelo_fisico.md
+=======
+>>>>>>> origin/main
   - Modelo Dimensional:
       - Estrutura Dimensional: modelo_dimensional.md
   - Dashboard:
