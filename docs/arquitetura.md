@@ -50,4 +50,3 @@ Esta arquitetura segue o padrão **Medallion Architecture (Bronze, Silver, Gold)
 
 * **Conexão:** O **Dashboard (Visualização Databricks/Power BI)** se conecta diretamente às tabelas da **Camada Gold**.
 * **Função:** Cálculo e exibição dos **4 KPIs de Vendas** (`Average Order Value`, `Top Categoria`, etc.) e das **2 Métricas de Volume** (`Vendas Mensais 12M`, `Top 5 Produtos`).
-
