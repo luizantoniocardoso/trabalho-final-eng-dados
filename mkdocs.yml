@@ -13,7 +13,6 @@ theme:
 
 nav:
   - Início: index.md
-  - Domínio do Projeto: dominio.md
   - Arquitetura:
       - Visão Geral: arquitetura.md
   - Ingestão:
