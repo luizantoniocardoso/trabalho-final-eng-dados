@@ -1,7 +1,7 @@
 # Projeto de Pipeline de Dados — Data Lakehouse com ETL/ELT Completo
 ## Objetivo do Projeto
 
-#### O objetivo deste projeto é construir um pipeline de dados completo, seguindo as melhores práticas de arquitetura Data Lakehouse, integrando diferentes fontes de dados (SQL e NoSQL), realizando ingestão, tratamento, modelagem dimensional e disponibilização analítica para dashboards.
+#### O objetivo deste projeto é construir um pipeline de dados completo, seguindo as melhores práticas de arquitetura Data Lakehouse, integrando diferentes fontes de dados (SQL), realizando ingestão, tratamento, modelagem dimensional e disponibilização analítica para dashboards.
 #### Este projeto simula um ambiente corporativo real e abrange todas as etapas do ciclo de vida de engenharia de dados, desde a criação do ambiente de origem até a entrega em ferramenta de BI, incluindo documentação detalhada em MKDocs.
 #### Ao final, o pipeline permitirá consultas rápidas, confiáveis e padronizadas, suportando métricas e KPIs essenciais definidos na camada Gold.
 ---
