@@ -31,4 +31,4 @@ independente de tecnologia, mostrando apenas **entidades** e **relacionamentos**
 
 Abaixo, o diagrama conceitual em notação ER utilizado no projeto:
 
-![Modelo Conceitual](image.png)
+<img src="https://github.com/luizantoniocardoso/trabalho-final-eng-dados/blob/main/assets/modelo_conceitual.jpg?raw=true" alt="Modelo Conceitual" width="800"/>
