@@ -1,56 +1,52 @@
-<<<<<<< HEAD
-# Arquitetura do Pipeline
-
-Descreva aqui a arquitetura geral da solução.
-=======
 # Diagrama da Arquitetura do Pipeline
 
-Esta arquitetura segue o padrão **Medallion Architecture (Bronze, Silver, Gold)**, implementada em **Databricks**, para transformar o modelo transacional de origem em um modelo dimensional otimizado para BI.
+Esta arquitetura segue o padrão **Medallion Architecture (Bronze, Silver, Gold)**, implementada em **Databricks**, para transformar o modelo transacional de origem (**PostgreSQL**) em um modelo dimensional otimizado para BI.
 
 ---
 
-## 1. Sistema de Origem
+## 1. Sistema de Origem (Source)
 
-* **Fonte:** Banco de dados relacional que contém o **Modelo Transacional** (as 10+ tabelas: `vendas`, `itens_venda`, `clientes`, `produtos`, `fornecedores`, etc.).
-* **Extração:** Utiliza-se a ferramenta de **Orquestração** (ex: Databricks Workflows ou Airflow) para disparar o carregamento.
-
----
-
-## 2. 🥉 Camada Bronze (Raw Padronizado)
-
-* **Função:** Ingestão *raw* e padronização do formato de armazenamento.
-* **Processo:** **Spark/PySpark** lê o volume Landing (CSV/JSON).
-* **Formato:** **Delta Lake**.
-* **Regras:** * Persistência 1:1 dos dados de origem.
-    * Adição de colunas de metadados (`data_hora_bronze`, `nome_arquivo`) para rastreabilidade.
+* **Fonte:** Banco de dados relacional **PostgreSQL (Railway)** que hospeda o **Modelo Transacional** (tabelas: `clientes`, `produtos`, `vendas`, `itens_venda`, etc.).
+* **Extração:** O **Airflow** é utilizado como orquestrador para disparar os *notebooks* do Databricks/PySpark que realizam a leitura e ingestão inicial.
 
 ---
 
-## 3. 🥈 Camada Silver (Refinamento e Conformidade)
+## 2. Camada Bronze (Raw Imutável)
 
-* **Função:** Limpeza, padronização e regras de qualidade.
-* **Processo:** **Spark/PySpark** lê a Bronze.
+* **Função:** Ingestão bruta (`raw`) e persistência **imutável** dos dados de origem. É o primeiro ponto de controle.
+* **Processo:** **PySpark** lê diretamente o PostgreSQL ou o *landing zone*.
+* **Formato:** **Delta Lake** (sobre o armazenamento de objetos).
 * **Regras:**
-    * **Qualidade:** Aplicação de **Regras de Nomenclatura** unificadas (ex: `CD_` $\to$ `CODIGO_`, `UPPERCASE`).
-    * Remoção de colunas de auditoria antigas e adição de rastreamento Silver.
-    * Os dados são limpos e conformados, servindo como a *staging area* para a Gold.
+    * **Persistência 1:1:** O esquema da Bronze reflete fielmente o esquema original.
+    * Adição de metadados para rastreabilidade (`data_hora_bronze`, `nome_arquivo`).
+    * Nenhuma limpeza, filtro ou transformação é aplicada.
 
 ---
 
-## 4. 🥇 Camada Gold (Modelagem Dimensional - Consumo)
+## 3. Camada Silver (Limpeza e Conformidade)
 
-* **Função:** Modelagem de Dados para consumo de BI e KPIs.
-* **Processo:** **Spark/PySpark** lê a Silver.
+* **Função:** Aplicação de **Qualidade de Dados** (limpeza, padronização, deduplicação) e preparação de entidades de negócios.
+* **Processo:** **PySpark / Spark SQL** lê a Camada Bronze e aplica transformações.
+* **Regras:**
+    * **Qualidade:** Tratamento de nulos, *deduplicação* e padronização de campos de identificação (`CPF`, `CNPJ`).
+    * **Padronização:** Aplicação de **Regras de Nomenclatura** unificadas e garantia de tipagem correta.
+    * Os dados são conformados e *desnormalizados parcialmente*, servindo como a *staging area* para a Camada Gold.
+
+---
+
+## 4. Camada Gold (Modelagem Dimensional - Consumo)
+
+* **Função:** Modelagem final do armazém de dados (*Data Warehouse*) otimizado para análises de BI.
+* **Processo:** **Spark/PySpark** lê a Camada Silver e executa a lógica de modelagem dimensional.
 * **Formato:** **Delta Lake**.
-* **Regras de Modelagem:**
-    * **Dimensões:** Implementação da lógica **SCD Tipo 2** para rastrear o histórico das 5 dimensões: `clientes`, `enderecos`, `fornecedores`, `produtos`, `transportadoras`.
-    * **Tabela Fato:** Construção da tabela **`fato_vendas`** (agregação de transações de vendas, itens, pagamentos e entregas).
-* **Output:** Modelo Dimensional (*Star Schema*).
+* **Regras de Modelagem (Star Schema):**
+    * **Dimensões:** Criação das 5 dimensões (`dim_cliente`, `dim_fornecedor`, `dim_pagamento`, `dim_produto`, `dim_transportadora`). Implementação da lógica **SCD Tipo 2** (via `MERGE`) para rastrear o histórico de mudanças.
+    * **Tabela Fato:** Construção da tabela **`fato_vendas`**, ligando as métricas transacionais (`quantidade`, `valor_total`) às chaves substitutas (`sk_*`) das dimensões.
+* **Output:** Modelo Dimensional Pronto para Consumo (Base Final).
 
 ---
 
 ## 5. Camada de Consumo
 
-* **Conexão:** O **Dashboard** (Power BI, Superset, etc.) se conecta diretamente à **Camada Gold**.
-* **Função:** Cálculo dos **4 KPIs e 2 Métricas**
->>>>>>> origin/main
+* **Conexão:** O **Dashboard (Visualização Databricks/Power BI)** se conecta diretamente às tabelas da **Camada Gold**.
+* **Função:** Cálculo e exibição dos **4 KPIs de Vendas** (`Average Order Value`, `Top Categoria`, etc.) e das **2 Métricas de Volume** (`Vendas Mensais 12M`, `Top 5 Produtos`).
