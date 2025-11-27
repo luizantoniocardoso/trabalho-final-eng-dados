@@ -1,6 +1,7 @@
 site_name: Trabalho Final - Engenharia de Dados
 site_description: Documentação oficial do projeto do Data Lakehouse
-site_author: Sua Equipe
+site_author: luiz antonio cardoso, alexandre sartore teixeira, cristófer figurédo martins, davi carlos freitas, guilherme zapelíni da rosa schwa, tiago silvia de bittencourt
+site_url: https://luizantoniocardoso.github.io/trabalho-final-eng-dados/
 repo_url: https://github.com/luizantoniocardoso/trabalho-final-eng-dados
 
 theme:
@@ -17,8 +18,7 @@ nav:
       - Visão Geral: arquitetura.md
   - Ingestão:
       - Estratégia de Ingestão: ingestao.md
-  - Transformações:
-      - Bronze / Silver / Gold: transformacoes.md
+
   - Modelagem de Dados:
       - Modelo Conceitual: modelo_conceitual.md
       - Modelo Físico (DDL): modelo_fisico.md
